@@ -22,7 +22,7 @@
       overflow: hidden;
       width: 100vw;
       height: 100vh;
-      background:#000 url("love/img/2.jpg") no-repeat;
+      background: #000 url("love/img/2.jpg") no-repeat;
       background-position: center !important;
       background-size: cover !important;
       font-family: 'Raleway', sans-serif;
@@ -106,15 +106,14 @@
         event.preventDefault()
       }, false);
 
-      var url =  Math.ceil(Math.random()*20);
-      document.body.style.background = "#000 url('./love/img/"+ url +".jpg') no-repeat";
+      var url = Math.ceil(Math.random() * 20);
+      document.body.style.background = "#000 url('./love/img/" + url + ".jpg') no-repeat";
 
       setInterval(datesDif, 1000);
     });
 
-
     function datesDif() {
-      var pZreo = function(num) {
+      var pZreo = function (num) {
         if (num < 10) {
           return '0' + num;
         }
@@ -122,7 +121,7 @@
       }
       var nowDate = new Date()
       var difDate = Date.parse(nowDate) - Date.parse('2016-11-11')
-      
+
 
       // 计算出相差天数  
       var days = Math.floor(difDate / (24 * 3600 * 1000))
