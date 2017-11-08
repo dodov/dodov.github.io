@@ -22,15 +22,15 @@
       overflow: hidden;
       width: 100vw;
       height: 100vh;
-      background:#000 url("love/img/sea.jpg") no-repeat;
+      background:#000 url("love/img/2.jpg") no-repeat;
       background-position: center !important;
-      background-size: 100% !important;
+      background-size: cover !important;
       font-family: 'Raleway', sans-serif;
     }
 
     .timewrap {
       position: absolute;
-      bottom: 0;
+      bottom: 20px;
       right: 0;
       width: 100%;
       padding: 10px;
@@ -53,9 +53,9 @@
     }
 
     .ctbox {
-      color: #ddd;
+      color: #ffffff;
       font-weight: 700;
-      font-size: 30px;
+      font-size: 36px;
     }
 
     .aitf {
@@ -106,8 +106,8 @@
         event.preventDefault()
       }, false);
 
-      var url =  Math.ceil(Math.random()*2);
-      // document.body.style.background = "#000 url('./img/"+ url +".jpg') no-repeat";
+      var url =  Math.ceil(Math.random()*20);
+      document.body.style.background = "#000 url('./love/img/"+ url +".jpg') no-repeat";
 
       setInterval(datesDif, 1000);
     });
