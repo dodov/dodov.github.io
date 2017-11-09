@@ -113,7 +113,7 @@
     });
 
     function datesDif() {
-      var pZreo = function (num) {
+      var pZreo = function(num) {
         if (num < 10) {
           return '0' + num;
         }
@@ -121,6 +121,7 @@
       }
       var nowDate = new Date()
       var difDate = Date.parse(nowDate) - Date.parse('2016-11-11 00:00:00')
+      
 
       // 计算出相差天数  
       var days = Math.floor(difDate / (24 * 3600 * 1000))
