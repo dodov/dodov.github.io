@@ -19,11 +19,10 @@
     }
 
     body {
-      font-family:  'PingFang SC', -apple-system, BlinkMacSystemFont, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', sans-serif;
       overflow: hidden;
       width: 100vw;
       height: 100vh;
-      background: url(https://github.com/dodov/dodov.github.io/blob/master/694247.jpg?raw=true) no-repeat;
+      background: url(https://github.com/dodov/dodov.github.io/blob/master/636727.jpg?raw=true) no-repeat;
       background-size: cover;
       background-position: center;
     }
@@ -39,29 +38,32 @@
     .text {
       vertical-align: sub;
       color: #ddd;
-      font-size: 16px;
+      font-size: 12px;
     }
 
     .daybox .nums {
       vertical-align: sub;
-      font-size: 35px;
+      font-size: 28px;
       font-weight: 700;
+      color: black;
     }
 
     #seconds {
-      font-size: 60px;
+      font-size: 48px;
     }
 
     .ctbox {
       color: #ffffff;
       font-weight: 700;
-      font-size: 36px;
+      font-size: 30px;
+      margin-bottom: 5px;
+      text-shadow: 5px 5px 30px rgb(0, 0, 0, 0.5);
     }
 
     .aitf {
       letter-spacing: 0;
       text-shadow: 0 0 80px rgba(255, 255, 255, 0.973);
-      background: url(https://raw.githubusercontent.com/dodov/dodov.github.io/master/636727.jpg) repeat-y;
+      background: url(http://f.cl.ly/items/010q3E1u3p2Q0j1L1S1o/animated_text_fill.png) repeat-y;
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -97,15 +99,15 @@
     <div class="itembox">
       <p class="ctbox">Waiting for Happiness</p>
       <p class="daybox">
-        <span id="days" class="nums aitf">--</span>
+        <span id="days" class="nums aitf">-</span>
         <span class="text">days</span>
-        <span id="hours" class="nums aitf">--</span>
+        <span id="hours" class="nums aitf">-</span>
         <span class="text">hours</span>
-        <span id="minutes" class="nums aitf">--</span>
+        <span id="minutes" class="nums aitf">-</span>
         <span class="text">minutes</span>
-      </p>
-      <p class="daybox">
-        <span id="seconds" class="nums aitf">--</span>
+        <!-- </p>
+      <p class="daybox"> -->
+        <span id="seconds" class="nums aitf">-</span>
         <span class="text">seconds</span>
       </p>
     </div>
@@ -126,7 +128,7 @@
           return num;
         }
         var nowDate = new Date()
-        var difDate = Date.parse(nowDate) - Date.parse('2018/10/28 00:00:00')
+        var difDate = Date.parse(nowDate) - Date.parse('2017/10/28 00:00:00')
 
         // 计算出相差天数  
         var days = Math.floor(difDate / (24 * 3600 * 1000))
