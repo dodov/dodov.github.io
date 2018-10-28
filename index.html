@@ -9,7 +9,7 @@
   <meta content="black" name="apple-mobile-web-app-status-bar-style">
   <meta name="full-screen" content="yes">
   <meta name="x5-fullscreen" content="true">
-  <title>Love</title>
+  <title>Waiting for Happiness</title>
   <style>
     * {
       border: 0;
@@ -19,13 +19,13 @@
     }
 
     body {
+      font-family:  'PingFang SC', -apple-system, BlinkMacSystemFont, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', sans-serif;
       overflow: hidden;
       width: 100vw;
       height: 100vh;
-      background: #000 url("love/images/sea.jpg") no-repeat;
-      background-position: center !important;
-      background-size: cover !important;
-      font-family: 'Raleway', sans-serif;
+      background: url(https://github.com/dodov/dodov.github.io/blob/master/694247.jpg?raw=true) no-repeat;
+      background-size: cover;
+      background-position: center;
     }
 
     .timewrap {
@@ -61,7 +61,7 @@
     .aitf {
       letter-spacing: 0;
       text-shadow: 0 0 80px rgba(255, 255, 255, 0.973);
-      background: url(http://f.cl.ly/items/010q3E1u3p2Q0j1L1S1o/animated_text_fill.png) repeat-y;
+      background: url(https://raw.githubusercontent.com/dodov/dodov.github.io/master/636727.jpg) repeat-y;
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -74,6 +74,17 @@
       0% {
         background-position: 0% 50%;
       }
+
+      100% {
+        background-position: 100% 50%;
+      }
+    }
+
+    @keyframes aitf {
+      0% {
+        background-position: 0% 50%;
+      }
+
       100% {
         background-position: 100% 50%;
       }
@@ -84,65 +95,57 @@
 <body>
   <div class="timewrap">
     <div class="itembox">
-      <p class="ctbox">我们在一起</p>
+      <p class="ctbox">Waiting for Happiness</p>
       <p class="daybox">
         <span id="days" class="nums aitf">--</span>
-        <span class="text">天</span>
+        <span class="text">days</span>
         <span id="hours" class="nums aitf">--</span>
-        <span class="text">小时</span>
+        <span class="text">hours</span>
         <span id="minutes" class="nums aitf">--</span>
-        <span class="text">分钟</span>
+        <span class="text">minutes</span>
+      </p>
+      <p class="daybox">
         <span id="seconds" class="nums aitf">--</span>
-        <span class="text">秒</span>
+        <span class="text">seconds</span>
       </p>
     </div>
-  </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function (event) {
+        console.log("DOM fully loaded and parsed");
+        document.addEventListener('touchmove', function (event) {
+          event.preventDefault()
+        }, false);
+        setInterval(datesDif, 1000);
+      });
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function (event) {
-      console.log("DOM fully loaded and parsed");
-
-      document.addEventListener('touchmove', function (event) {
-        event.preventDefault()
-      }, false);
-
-      var url = Math.ceil(Math.random() * 20);
-      document.body.style.background = "#000 url('./love/images/" + url + ".jpg') no-repeat";
-
-      setInterval(datesDif, 1000);
-    });
-
-    function datesDif() {
-      var pZreo = function(num) {
-        if (num < 10) {
-          return '0' + num;
+      function datesDif() {
+        var pZreo = function (num) {
+          if (num < 10) {
+            return '0' + num;
+          }
+          return num;
         }
-        return num;
+        var nowDate = new Date()
+        var difDate = Date.parse(nowDate) - Date.parse('2018/10/28 00:00:00')
+
+        // 计算出相差天数  
+        var days = Math.floor(difDate / (24 * 3600 * 1000))
+        // 计算出小时数  
+        var leaveH = difDate % (24 * 3600 * 1000)  // 计算天数后剩余的毫秒数  
+        var hours = Math.floor(leaveH / (3600 * 1000))
+        // 计算相差分钟数  
+        var leaveM = leaveH % (3600 * 1000)  // 计算小时数后剩余的毫秒数  
+        var minutes = Math.floor(leaveM / (60 * 1000))
+        // 计算相差秒数  
+        var leaveS = leaveM % (60 * 1000)  // 计算分钟数后剩余的毫秒数  
+        var seconds = Math.round(leaveS / 1000)
+        // console.log("" + days + "天 " + hours + "小时 " + minutes + " 分钟" + seconds + " 秒")
+        document.getElementById('days').innerHTML = days;
+        document.getElementById('hours').innerHTML = pZreo(hours);
+        document.getElementById('minutes').innerHTML = pZreo(minutes);
+        document.getElementById('seconds').innerHTML = pZreo(seconds);
       }
-      var nowDate = new Date()
-      var difDate = Date.parse(nowDate) - Date.parse('2016/11/11 00:00:00')
-      
-
-      // 计算出相差天数  
-      var days = Math.floor(difDate / (24 * 3600 * 1000))
-      // 计算出小时数  
-      var leaveH = difDate % (24 * 3600 * 1000)  // 计算天数后剩余的毫秒数  
-      var hours = Math.floor(leaveH / (3600 * 1000))
-      // 计算相差分钟数  
-      var leaveM = leaveH % (3600 * 1000)  // 计算小时数后剩余的毫秒数  
-      var minutes = Math.floor(leaveM / (60 * 1000))
-      // 计算相差秒数  
-      var leaveS = leaveM % (60 * 1000)  // 计算分钟数后剩余的毫秒数  
-      var seconds = Math.round(leaveS / 1000)
-
-      // console.log("" + days + "天 " + hours + "小时 " + minutes + " 分钟" + seconds + " 秒")
-
-      document.getElementById('days').innerHTML = days;
-      document.getElementById('hours').innerHTML = pZreo(hours);
-      document.getElementById('minutes').innerHTML = pZreo(minutes);
-      document.getElementById('seconds').innerHTML = pZreo(seconds);
-    }
-  </script>
+    </script>
 </body>
 
 </html>
